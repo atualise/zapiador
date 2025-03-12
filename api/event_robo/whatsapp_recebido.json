@@ -1,0 +1,86 @@
+{
+    "resource": "/robo/v1/webhook",
+    "path": "/robo/v1/webhook",
+    "httpMethod": "POST",
+    "headers": {
+        "Accept": "*/*",
+        "Accept-Encoding": "gzip, deflate, br",
+        "Content-Type": "application/json",
+        "Host": "api.zapiador.com",
+        "Postman-Token": "60b45972-9ee1-44f2-9ac7-4e34b14cd554",
+        "User-Agent": "PostmanRuntime/7.42.0",
+        "X-Amzn-Trace-Id": "Root=1-6747863b-03f557bd59d22fe855693e5f",
+        "X-Forwarded-For": "45.238.246.208",
+        "X-Forwarded-Port": "443",
+        "X-Forwarded-Proto": "https"
+    },
+    "multiValueHeaders": {
+        "Accept": [
+            "*/*"
+        ],
+        "Accept-Encoding": [
+            "gzip, deflate, br"
+        ],
+        "Content-Type": [
+            "application/json"
+        ],
+        "Host": [
+            "api.zapiador.com"
+        ],
+        "Postman-Token": [
+            "60b45972-9ee1-44f2-9ac7-4e34b14cd554"
+        ],
+        "User-Agent": [
+            "PostmanRuntime/7.42.0"
+        ],
+        "X-Amzn-Trace-Id": [
+            "Root=1-6747863b-03f557bd59d22fe855693e5f"
+        ],
+        "X-Forwarded-For": [
+            "45.238.246.208"
+        ],
+        "X-Forwarded-Port": [
+            "443"
+        ],
+        "X-Forwarded-Proto": [
+            "https"
+        ]
+    },
+    "queryStringParameters": null,
+    "multiValueQueryStringParameters": null,
+    "pathParameters": null,
+    "stageVariables": null,
+    "requestContext": {
+        "resourceId": "4imcb3",
+        "resourcePath": "/robo/v1/webhook",
+        "httpMethod": "POST",
+        "extendedRequestId": "B7HpWEXkIAMEpXw=",
+        "requestTime": "27/Nov/2024:20:51:07 +0000",
+        "path": "/robo/v1/webhook",
+        "accountId": "492205185884",
+        "protocol": "HTTP/1.1",
+        "stage": "prod",
+        "domainPrefix": "api",
+        "requestTimeEpoch": 1732740667445,
+        "requestId": "1921a7d2-954e-403d-a59d-ca0bb56f55ea",
+        "identity": {
+            "cognitoIdentityPoolId": null,
+            "accountId": null,
+            "cognitoIdentityId": null,
+            "caller": null,
+            "sourceIp": "45.238.246.208",
+            "principalOrgId": null,
+            "accessKey": null,
+            "cognitoAuthenticationType": null,
+            "cognitoAuthenticationProvider": null,
+            "userArn": null,
+            "userAgent": "PostmanRuntime/7.42.0",
+            "user": null
+        },
+        "domainName": "api.zapiador.com",
+        "deploymentId": "3pf9sn",
+        "apiId": "rdpnxess33"
+    },
+    "body": "{\n    \"sender_telefone\":\"+5561983410160\",\n    \"sender_text_message\":\"Oi, quero saber mais informações sobre o produto\",\n    \"message_id\":\"wamid.HBgNNTUxMTk3NTcxNjYxNRUCABEYEkE5NUYzRTNERDYzRjMzMTRDMAA=\",\n    \"event_date\":\"2024-11-25 16:40:00\"\n}",
+    "isBase64Encoded": false
+}

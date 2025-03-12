@@ -1,0 +1,86 @@
+{
+    "resource": "/robo/v1/webhook",
+    "path": "/robo/v1/webhook",
+    "httpMethod": "POST",
+    "headers": {
+        "Accept": "*/*",
+        "Accept-Encoding": "gzip, deflate, br",
+        "Content-Type": "application/json",
+        "Host": "api.zapiador.com",
+        "Postman-Token": "f1ed7705-0e2e-46b5-9eed-0649b798f9c5",
+        "User-Agent": "PostmanRuntime/7.42.0",
+        "X-Amzn-Trace-Id": "Root=1-674ca8cf-017cd3ff373eb50951928d13",
+        "X-Forwarded-For": "45.238.246.15",
+        "X-Forwarded-Port": "443",
+        "X-Forwarded-Proto": "https"
+    },
+    "multiValueHeaders": {
+        "Accept": [
+            "*/*"
+        ],
+        "Accept-Encoding": [
+            "gzip, deflate, br"
+        ],
+        "Content-Type": [
+            "application/json"
+        ],
+        "Host": [
+            "api.zapiador.com"
+        ],
+        "Postman-Token": [
+            "f1ed7705-0e2e-46b5-9eed-0649b798f9c5"
+        ],
+        "User-Agent": [
+            "PostmanRuntime/7.42.0"
+        ],
+        "X-Amzn-Trace-Id": [
+            "Root=1-674ca8cf-017cd3ff373eb50951928d13"
+        ],
+        "X-Forwarded-For": [
+            "45.238.246.15"
+        ],
+        "X-Forwarded-Port": [
+            "443"
+        ],
+        "X-Forwarded-Proto": [
+            "https"
+        ]
+    },
+    "queryStringParameters": null,
+    "multiValueQueryStringParameters": null,
+    "pathParameters": null,
+    "stageVariables": null,
+    "requestContext": {
+        "resourceId": "4imcb3",
+        "resourcePath": "/robo/v1/webhook",
+        "httpMethod": "POST",
+        "extendedRequestId": "CH9QaHS_IAMEoEg=",
+        "requestTime": "01/Dec/2024:18:19:59 +0000",
+        "path": "/robo/v1/webhook",
+        "accountId": "492205185884",
+        "protocol": "HTTP/1.1",
+        "stage": "prod",
+        "domainPrefix": "api",
+        "requestTimeEpoch": 1733077199081,
+        "requestId": "884bc225-c546-4175-89be-29d15b58eea9",
+        "identity": {
+            "cognitoIdentityPoolId": null,
+            "accountId": null,
+            "cognitoIdentityId": null,
+            "caller": null,
+            "sourceIp": "45.238.246.15",
+            "principalOrgId": null,
+            "accessKey": null,
+            "cognitoAuthenticationType": null,
+            "cognitoAuthenticationProvider": null,
+            "userArn": null,
+            "userAgent": "PostmanRuntime/7.42.0",
+            "user": null
+        },
+        "domainName": "api.zapiador.com",
+        "deploymentId": "zvv651",
+        "apiId": "rdpnxess33"
+    },
+    "body": "{\n    \"cliente_nome\":\"Wilson Araújo de Lima\",\n    \"cliente_telefone\":\"61983410160\",\n    \"cliente_email\":\"wilson.ojuara@yahoo.com.br\",\n    \"produto_id\":\"2435161\",\n    \"produto_nome\":\"Pós-Graduação em Arqueologia, História e Interpretação da Bíblia com Rodrigo Silva (RECORRENTE)\",\n    \"negocio_id\":\"BRTTI\"\n}",
+    "isBase64Encoded": false
+}

@@ -1,0 +1,20 @@
+{
+    "Records": [
+        {
+            "messageId": "1e23b7d5-c4f0-4972-b754-edc2cb118f8a",
+            "receiptHandle": "AQEBWpFgJN8QA/1laUBsZFPwsbWZyDk8mIGMnRjPck/R35xbXdxZVWX7bLvOjpb49gDbALBa4nY2rkxEOc6352KMbFskB6LI02sq37jtu5JRrfJE2bYRLooSur9cX4LYlf1Vx0xXk/WgemM1gahFdALk66VAiUbpK30fpC52JyRhkhNE0vWrTZKnu5JeTxAvXrH8c/yY3EoFJxrWkmmGHOymO1HUQ5RwkepoYVg0tpjeRKJRtHipQdxn50zFvuG4jYMU1eyra5ZJGJnERs9iBCMViZH7wuJjQe3XW+x//u0QP8ZpNtU1s8YZB2L3PCpoh9q2RsdBlzA57cyk+cTJR2bWYJhOmzmf1tvdxV6Ph9t9vIcl5agYegCvvAIHDU64mYKVmQP1gmrCN85QD4XajiErmZuNho7hxsalIXJDgxaw51Y=",
+            "body": "{\"is_contract_active\":false,\"is_contract_pendente\":false,\"is_contract_overdue\":false,\"is_contract_churn\":true,\"negocio_id\":\"BRTTI\",\"client_id\":\"22372779826\",\"message_id\":null,\"contract_id\":\"1121689\",\"sender_id\":null,\"users_ids\":null,\"window_start\":null,\"products_ids\":[\"993764\"],\"created_at\":\"2024-11-30 17:48:39\",\"contract_status\":\"CHURN\",\"client_telefone\":\"54992149393\",\"event_type\":\"EXECUTED_COMMAND\",\"robos_list\":[{\"id\":\"R789\",\"gatilho_execucao\":\"CONTRACT_CHANGE\",\"tarefa_execucao\":\"ADD_FUNIL\",\"user_id\":\"\",\"funil_id\":\"F123\"}],\"funils_list\":[{\"id\":\"F123\",\"funil_nome\":\"Funil clientes renovação\"}],\"users_list\":[],\"funils_steps\":[{\"id\":\"1\",\"funil_id\":\"F123\",\"sequence\":0,\"type\":\"SEND_MESSAGE_TEMPLATE\",\"robo\":null,\"template\":null,\"form\":null,\"tag\":null},{\"id\":\"2\",\"funil_id\":\"F123\",\"sequence\":1,\"type\":\"SEND_MESSAGE_FORM\",\"robo\":null,\"template\":null,\"form\":null,\"tag\":null},{\"id\":\"3\",\"funil_id\":\"F123\",\"sequence\":2,\"type\":\"FORWARD_USER\",\"robo\":null,\"template\":null,\"form\":null,\"tag\":null},{\"id\":\"4\",\"funil_id\":\"F123\",\"sequence\":3,\"type\":\"SEND_MESSAGE_TEMPLATE\",\"robo\":null,\"template\":null,\"form\":null,\"tag\":null},{\"id\":\"5\",\"funil_id\":\"F123\",\"sequence\":4,\"type\":\"ADD_TAG\",\"robo\":null,\"template\":null,\"form\":null,\"tag\":null},{\"id\":\"6\",\"funil_id\":\"F123\",\"sequence\":5,\"type\":\"WAIT_SCHEDULER\",\"robo\":null,\"template\":null,\"form\":null,\"tag\":null}],\"executed_at\":\"2024-11-30 17:43:55\",\"return_type\":\"FORWARD_USER\",\"next_step\":\"4\",\"current_step\":\"3\",\"client_name\":\"Keyla Deucher\",\"client_email\":\"kdeucher@gmail.com\"}",
+            "attributes": {
+                "ApproximateReceiveCount": "1",
+                "SentTimestamp": "1732988920210",
+                "SenderId": "AROAXFGNXDNOO6IB35O6K:serverless-framework-ux8bsg",
+                "ApproximateFirstReceiveTimestamp": "1732988920212"
+            },
+            "messageAttributes": {},
+            "md5OfBody": "5c5dc5dfd4ea8e8a3cbef64915173792",
+            "eventSource": "aws:sqs",
+            "eventSourceARN": "arn:aws:sqs:us-east-1:492205185884:zapiador-api-prod-execucao_robo",
+            "awsRegion": "us-east-1"
+        }
+    ]
+}

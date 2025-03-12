@@ -1,0 +1,20 @@
+{
+    "Records": [
+        {
+            "messageId": "86dde0d3-948a-4f9f-9f2a-1b6ede84aaf0",
+            "receiptHandle": "AQEBSVPAsuWJPJyhm/+t+v4zmCI3D5UqRkWBjq6PXefAomT/P+37nTm+CPk4JER9Ug/1R0Ip6SuZktLibBydD7Tb1oo1aRXxgYsH3Mu9C05eoyJPhOEEDcQSMPScvhxyW1NsyInwEk2fIeLhAsfHFJUsoDbgkZEudQ34igBMtCr6oiaiNnFpkjI5SYPp5PB0sVi5qv3lTlrg4D5Sn2eZyyIQNQpVMcyojLg56raweY2yHWsXKMCe+3c1NNRFjTU6o798ol7nkfysR2EEtAfoiboB90hYWG2pciw5rg+ymhiRKgbwoO5pvm2R6QIJ0nEuM9lFm4Iy8kg5/sZUJrqA8WVJaeUyu+MjGvnV+n6UV0mIayYaeW2D3fmwEBKOzraskHgt6qfL5Nnly8lmOGV3fPaZ3flxt9bGQ2psH7ugChalRtM=",
+            "body": "{\"is_contract_related\":true,\"is_contract_active\":true,\"is_contract_pendente\":false,\"is_contract_overdue\":false,\"is_products_related\":true,\"is_users_related\":false,\"is_activated_by_message\":false,\"is_activated_by_event\":false,\"is_funil_related\":false,\"is_client\":true,\"is_destination_individual\":false,\"is_destination_group\":true,\"negocio_id\":\"BRTTI\",\"client_id\":\"49178725453\",\"message_id\":null,\"contract_id\":\"3105193\",\"sender_id\":null,\"users_ids\":null,\"window_start\":null,\"products_ids\":[\"2435161\"],\"created_at\":\"2024-11-28 16:38:24\",\"contract_status\":\"RENOVADO\",\"client_telefone\":\"+5561983410160\",\"funil_ids\":null,\"event_type\":\"ABANDONED_CART\",\"robos_list\":[{\"id\":\"R456\",\"gatilho_execucao\":\"ABANDONED_CART\",\"tarefa_execucao\":\"ADD_FUNIL\",\"user_id\":\"\",\"funil_id\":\"F123\"}],\"funils_list\":[{\"id\":\"F123\",\"funil_nome\":\"Funil clientes renovação\"}],\"users_list\":[],\"funils_steps\":[{\"id\":\"1\",\"funil_id\":\"F123\",\"sequence\":0,\"type\":\"template\",\"robo\":null,\"template\":{\"template_id\":\"T123\",\"template_nome\":\"Boas-vindas\"},\"form\":null,\"tag\":null},{\"id\":\"2\",\"funil_id\":\"F123\",\"sequence\":1,\"type\":\"form\",\"robo\":null,\"template\":null,\"form\":{\"form_id\":\"F123\",\"form_nome\":\"Dados básicos\"},\"tag\":null},{\"id\":\"3\",\"funil_id\":\"F123\",\"sequence\":2,\"type\":\"robo\",\"robo\":{\"robo_id\":\"R123\",\"robo_nome\":\"Robo de mensagem recebida encaminha para ususario\",\"gatilho_execucao\":\"MESSAGE_RECEIVED\",\"produtos_contexto\":[\"2435161\"]},\"template\":null,\"form\":null,\"tag\":null},{\"id\":\"4\",\"funil_id\":\"F123\",\"sequence\":3,\"type\":\"template\",\"robo\":null,\"template\":{\"template_id\":\"T456\",\"template_nome\":\"Encaminhamento\"},\"form\":null,\"tag\":null},{\"id\":\"5\",\"funil_id\":\"F123\",\"sequence\":4,\"type\":\"tag\",\"robo\":null,\"template\":null,\"form\":null,\"tag\":{\"tag_id\":\"T123\",\"tag_nome\":\"Atendimento prioritário\"}}],\"executed_at\":null,\"client_name\":\"Wilson Arajo de Lima\",\"client_email\":\"wilson.ojuara@yahoo.com.br\"}",
+            "attributes": {
+                "ApproximateReceiveCount": "1",
+                "SentTimestamp": "1732811918087",
+                "SenderId": "AROAXFGNXDNOO6IB35O6K:serverless-framework-urxahu",
+                "ApproximateFirstReceiveTimestamp": "1732811918099"
+            },
+            "messageAttributes": {},
+            "md5OfBody": "e00976faed0ba148c0ab15eb967d6604",
+            "eventSource": "aws:sqs",
+            "eventSourceARN": "arn:aws:sqs:us-east-1:492205185884:zapiador-api-prod-execucao_robo",
+            "awsRegion": "us-east-1"
+        }
+    ]
+}

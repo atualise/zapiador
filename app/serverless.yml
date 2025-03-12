@@ -1,0 +1,190 @@
+
+org: atualise
+app: zapiador
+service: zapiador-webapp
+
+variablesResolutionMode: '20210219'
+configValidationMode: 'error'
+
+
+provider:
+  name: aws
+  runtime: nodejs18.x
+  stage: prod
+  region: us-east-1
+  lambdaHashingVersion: '20201221'
+  apiGateway:
+    shouldStartNameWithService: true
+  tags:
+    ServiceName: zapiador-webapp
+  
+
+package:
+  excludeDevDependencies: true
+  individually: true
+  include:
+    - .aws/**
+  exclude:
+    - node_modules/**
+    - .git/**
+    - .serverless/**
+    - .serverless-offline/**
+    - __pycache__
+    - data/**
+    - src/**
+    - build/**
+    - public/**
+
+
+plugins:
+  - serverless-offline
+  - serverless-single-page-app-plugin
+
+
+custom:
+  pythonRequirements:
+    dockerizePip: true
+  serverless-offline:
+    httpPort: 4000
+    useDocker: true
+  s3Bucket: zapiador-webapp-${self:provider.stage}
+
+
+
+resources:
+  Resources:
+    ## Specifying the S3 Bucket
+    WebAppS3Bucket:
+      Type: AWS::S3::Bucket      
+      Properties:
+        BucketName: ${self:custom.s3Bucket}
+        Tags:
+          - 
+            Key: StepName
+            Value: frontend
+          - 
+            Key: ServiceName
+            Value: webapp
+        WebsiteConfiguration:
+          IndexDocument: index.html
+          ErrorDocument: index.html
+    ## Specifying the CloudFront Distribution to server your Web Application
+    WebAppCloudFrontDistribution:
+      Type: AWS::CloudFront::Distribution
+      Properties:        
+        DistributionConfig:
+          Aliases:
+            - app.zapiador.com
+          Origins:
+            - DomainName: ${self:custom.s3Bucket}.s3.amazonaws.com
+              ## An identifier for the origin which must be unique within the distribution
+              Id: ZapiadorWebApp
+              #CustomOriginConfig:
+              #  OriginProtocolPolicy: match-viewer
+                #OriginProtocolPolicy: https-only
+              ## In case you want to restrict the bucket access use S3OriginConfig and remove CustomOriginConfig
+              S3OriginConfig:
+                OriginAccessIdentity:
+                  Fn::Join:
+                    - ''
+                    -
+                      - 'origin-access-identity/cloudfront/'
+                      - Ref: cloudfrontoriginaccessidentity
+          Enabled: 'true'
+          #PriceClass: PriceClass_All
+          ## Uncomment the following section in case you are using a custom domain
+          DefaultRootObject: index.html
+          ## Since the Single Page App is taking care of the routing we need to make sure ever path is served with index.html
+          ## The only exception are files that actually exist e.h. app.js, reset.css
+          CustomErrorResponses:
+            - ErrorCode: 404
+              ResponseCode: 200
+              ResponsePagePath: /index.html
+          DefaultCacheBehavior:
+            AllowedMethods:
+              - DELETE
+              - GET
+              - HEAD
+              - OPTIONS
+              - PATCH
+              - POST
+              - PUT
+            ## The origin id defined above
+            TargetOriginId: ZapiadorWebApp
+           
+            # "Managed-CachingDisabled" from https://docs.aws.amazon.com/AmazonCloudFront/latest/DeveloperGuide/using-managed-cache-policies.html
+            FunctionAssociations:
+              - EventType: viewer-request
+                FunctionARN: !GetAtt RedirectFunction.FunctionMetadata.FunctionARN
+            ## Defining if and how the QueryString and Cookies are forwarded to the origin which in this case is S3
+            ForwardedValues:
+              QueryString: 'false'
+              Cookies:
+                Forward: none
+            ## The protocol that users can use to access the files in the origin. To allow HTTP use `allow-all`
+            ViewerProtocolPolicy: redirect-to-https
+          ## The certificate to use when viewers use HTTPS to request objects.
+          ViewerCertificate:
+            AcmCertificateArn: arn:aws:acm:us-east-1:492205185884:certificate/ce34b870-879e-463f-a117-801760579875
+            SslSupportMethod: sni-only
+          ## Uncomment the following section in case you want to enable logging for CloudFront requests
+          # Logging:
+          #   IncludeCookies: 'false'
+          #   Bucket: mylogs.s3.amazonaws.com
+          #   Prefix: myprefix
+        Tags:
+          - 
+            Key: StepName
+            Value: cdn
+          - 
+            Key: ServiceName
+            Value: webapp
+    cloudfrontoriginaccessidentity:
+      Type: AWS::CloudFront::CloudFrontOriginAccessIdentity
+      Properties:
+        CloudFrontOriginAccessIdentityConfig:
+          Comment: "origin com o s3"
+    RedirectFunction:
+      Type: AWS::CloudFront::Function
+      Properties:
+        AutoPublish: true
+        FunctionCode: !Sub |
+          var level = 0; // subdirectory level where index.html is located.
+          var regexExpr = /^\/.+(\.\w+$)/; // Regex expression than matches paths requestiong an object. i.e: /route1/my-picture.png
+          function handler(event) {
+              var request = event.request;
+              var olduri = request.uri;
+              if (isRoute(olduri)) { // if is a route request. i.e: /route1
+                  var defaultPath = '';                  
+                  var parts = olduri
+                      .replace(/^\//,'') // remove leading '/'
+                      .replace(/\/$/,'') // remove triling '/' if any
+                      .split('/'); // split uri into array of parts. i.e: ['route1', 'my-picture.png']                  
+                  var nparts = parts.length;
+                  // determine the limit as either level or nparts, whichever is lower
+                  var limit = (level <= nparts) ? level : nparts; 
+                  // build the default path. i.e: /route1
+                  for (var i = 0; i < limit; i++) {
+                      defaultPath += '/' + parts[i];
+                  }                  
+                  var newuri = defaultPath + '/index.html';
+                  request.uri = newuri;
+                  console.log('Request for [' + olduri + '], rewritten to [' + newuri + ']');
+              }   
+              return request;
+          }
+          // Returns true if uri is a route. i.e: /route1
+          // Returns false if uri is a file. i.e: /route1/index.html
+          function isRoute(uri) {
+              return !regexExpr.test(uri);
+          }
+
+        FunctionConfig:
+          Comment: !Sub 'Redirect to domain'
+          Runtime: cloudfront-js-2.0
+        Name: !Sub "${AWS::StackName}-redirectFunction"
+  ## In order to print out the hosted domain via `serverless info` we need to define the DomainName output for CloudFormation
+  Outputs:
+    WebAppCloudFrontDistributionOutput:
+      Value:
+        'Fn::GetAtt': [ WebAppCloudFrontDistribution, DomainName ]

@@ -1,0 +1,21 @@
+{
+    "Records": [
+        {
+            "messageId": "6c578228-e51a-41c3-b7de-dc221529a4bf",
+            "receiptHandle": "AQEBGuqU176RQ8mLzC+kloEkdj/ZQj9BpzSS4KfRNRxcCHEJ5kDrmC/T5P94uciIjF5g9k1VgFMCK6EB+XfziIweIr9cHgq/VuXsJyA7WiMTTyiE2au+yrntHJMGpapEKtC07A1SjU3nAWUK6Gl7fMq3skRJxuUgFQpmuJh3Wp29scwmV2Dwmc8wzJ5wrig6gmszjGU90oplQ0JUbgNduCss74fz8PuKyT7JHDPw/Oe0iM3TGjcuZH6xBDk2SrDDufFTPpFd0AvPWstZcGlzePRFlmQEtBE2pirQqNTEl4UzXFhRaY7qta9W6K7wzAoJrIRoQWKhMewHzgXWilKOFgssv4c40PfLZcJIiftCzrnQp3Og1FRjFZtsOsx1Lz4Bi5k3WD/8VPU18qQrpbN+NlJ46h1VQ5EYwgZh1OqZE1cuBM4=",
+            "body": "{\"is_contract_related\":true,\"is_contract_active\":true,\"is_contract_pendente\":false,\"is_contract_overdue\":false,\"is_products_related\":true,\"is_users_related\":false,\"is_activated_by_message\":true,\"is_activated_by_event\":false,\"is_funil_related\":false,\"is_client\":true,\"is_destination_individual\":false,\"is_destination_group\":true,\"negocio_id\":\"BRTTI\",\"client_id\":\"49178725453\",\"message_id\":\"wamid.HBgNNTUxMTk3NTcxNjYxNRUCABEYEkE5NUYzRTNERDYzRjMzMTRDMAA=\",\"contract_id\":\"3105193\",\"sender_id\":\"+5561983410160\",\"users_ids\":null,\"window_start\":null,\"products_ids\":[\"2435161\"],\"created_at\":null,\"contract_status\":\"RENOVADO\",\"client_telefone\":\"+5561983410160\",\"funil_ids\":null,\"event_type\":\"MESSAGE_RECEIVED\",\"client_name\":\"Wilson Arajo de Lima\",\"client_email\":\"wilson.ojuara@yahoo.com.br\"}",
+            "attributes": {
+                "ApproximateReceiveCount": "1",
+                "AWSTraceHeader": "Root=1-674857e8-1f80d0c85dfb50383f6911c1;Parent=56c07e883d524793;Sampled=0;Lineage=1:02b22510:0",
+                "SentTimestamp": "1732794346081",
+                "SenderId": "AROAXFGNXDNOG5BAQLN4V:zapiador-api-prod-robo_command",
+                "ApproximateFirstReceiveTimestamp": "1732794346083"
+            },
+            "messageAttributes": {},
+            "md5OfBody": "67a575fc6b6f87ff0524cab4a38e44cb",
+            "eventSource": "aws:sqs",
+            "eventSourceARN": "arn:aws:sqs:us-east-1:492205185884:zapiador-api-prod-execucao_robo",
+            "awsRegion": "us-east-1"
+        }
+    ]
+}

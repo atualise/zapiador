@@ -1,0 +1,40 @@
+{
+    "body": "{\n    \"to_phone\":\"5511975716615\",\n    \"text_message\":\"essa é a resposta\",\n    \"reply_id\": \"\"\n}",
+    "cookies": [],
+    "headers": {
+        "content-type": "application/json",
+        "user-agent": "PostmanRuntime/7.37.3",
+        "accept": "*/*",
+        "postman-token": "a44683bc-c9de-42da-82d3-d29d485e08ce",
+        "host": "localhost:4000",
+        "accept-encoding": "gzip, deflate, br",
+        "connection": "keep-alive",
+        "content-length": "95"
+    },
+    "isBase64Encoded": false,
+    "pathParameters": null,
+    "queryStringParameters": null,
+    "rawPath": "/v1/send",
+    "rawQueryString": "",
+    "requestContext": {
+        "accountId": "offlineContext_accountId",
+        "apiId": "offlineContext_apiId",
+        "domainName": "offlineContext_domainName",
+        "domainPrefix": "offlineContext_domainPrefix",
+        "http": {
+            "method": "POST",
+            "path": "/v1/send",
+            "protocol": "HTTP/1.1",
+            "sourceIp": "127.0.0.1",
+            "userAgent": "PostmanRuntime/7.37.3"
+        },
+        "requestId": "offlineContext_resourceId",
+        "routeKey": "POST /v1/send",
+        "stage": "$default",
+        "time": "03/Nov/2024:13:10:52 -0300",
+        "timeEpoch": 1730650252159
+    },
+    "routeKey": "POST /v1/send",
+    "stageVariables": null,
+    "version": "2.0"
+}

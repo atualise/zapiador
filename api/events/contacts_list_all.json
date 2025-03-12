@@ -1,0 +1,51 @@
+{
+    "version": "2.0",
+    "routeKey": "GET /v1/contacts",
+    "rawPath": "/v1/contacts",
+    "rawQueryString": "filterData=%7B%22search%22:%22%22%7D",
+    "headers": {
+        "accept": "application/json, text/plain, */*",
+        "accept-encoding": "gzip, deflate, br, zstd",
+        "accept-language": "pt-BR,pt;q=0.9,en-US;q=0.8,en;q=0.7,hi;q=0.6",
+        "cache-control": "no-cache",
+        "content-length": "0",
+        "host": "api.zapiador.com",
+        "origin": "http://localhost:3000",
+        "pragma": "no-cache",
+        "priority": "u=1, i",
+        "referer": "http://localhost:3000/",
+        "sec-ch-ua": "\"Chromium\";v=\"130\", \"Google Chrome\";v=\"130\", \"Not?A_Brand\";v=\"99\"",
+        "sec-ch-ua-mobile": "?0",
+        "sec-ch-ua-platform": "\"macOS\"",
+        "sec-fetch-dest": "empty",
+        "sec-fetch-mode": "cors",
+        "sec-fetch-site": "cross-site",
+        "user-agent": "Mozilla/5.0 (Macintosh; Intel Mac OS X 10_15_7) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/130.0.0.0 Safari/537.36",
+        "x-amzn-trace-id": "Root=1-67363432-2b8675f57cca14b54e03ff2d",
+        "x-forwarded-for": "45.238.246.167",
+        "x-forwarded-port": "443",
+        "x-forwarded-proto": "https"
+    },
+    "queryStringParameters": {
+        "filterData": "{\"search\":\"\"}"
+    },
+    "requestContext": {
+        "accountId": "492205185884",
+        "apiId": "lb0qetivfi",
+        "domainName": "api.zapiador.com",
+        "domainPrefix": "api",
+        "http": {
+            "method": "GET",
+            "path": "/v1/contacts",
+            "protocol": "HTTP/1.1",
+            "sourceIp": "45.238.246.167",
+            "userAgent": "Mozilla/5.0 (Macintosh; Intel Mac OS X 10_15_7) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/130.0.0.0 Safari/537.36"
+        },
+        "requestId": "BP0YAjuToAMEJJw=",
+        "routeKey": "GET /v1/contacts",
+        "stage": "$default",
+        "time": "14/Nov/2024:17:32:34 +0000",
+        "timeEpoch": 1731605554830
+    },
+    "isBase64Encoded": false
+}

@@ -1,0 +1,86 @@
+{
+    "resource": "/robo/v1/webhook",
+    "path": "/robo/v1/webhook",
+    "httpMethod": "POST",
+    "headers": {
+        "Accept": "*/*",
+        "Accept-Encoding": "gzip, deflate, br",
+        "Content-Type": "application/json",
+        "Host": "api.zapiador.com",
+        "Postman-Token": "c93b5667-163f-499a-bb22-8fc0c738f285",
+        "User-Agent": "PostmanRuntime/7.42.0",
+        "X-Amzn-Trace-Id": "Root=1-674dace9-3c270ba23769e8e5141a5243",
+        "X-Forwarded-For": "45.238.246.15",
+        "X-Forwarded-Port": "443",
+        "X-Forwarded-Proto": "https"
+    },
+    "multiValueHeaders": {
+        "Accept": [
+            "*/*"
+        ],
+        "Accept-Encoding": [
+            "gzip, deflate, br"
+        ],
+        "Content-Type": [
+            "application/json"
+        ],
+        "Host": [
+            "api.zapiador.com"
+        ],
+        "Postman-Token": [
+            "c93b5667-163f-499a-bb22-8fc0c738f285"
+        ],
+        "User-Agent": [
+            "PostmanRuntime/7.42.0"
+        ],
+        "X-Amzn-Trace-Id": [
+            "Root=1-674dace9-3c270ba23769e8e5141a5243"
+        ],
+        "X-Forwarded-For": [
+            "45.238.246.15"
+        ],
+        "X-Forwarded-Port": [
+            "443"
+        ],
+        "X-Forwarded-Proto": [
+            "https"
+        ]
+    },
+    "queryStringParameters": null,
+    "multiValueQueryStringParameters": null,
+    "pathParameters": null,
+    "stageVariables": null,
+    "requestContext": {
+        "resourceId": "4imcb3",
+        "resourcePath": "/robo/v1/webhook",
+        "httpMethod": "POST",
+        "extendedRequestId": "CKf0hGtIoAMEeHA=",
+        "requestTime": "02/Dec/2024:12:49:45 +0000",
+        "path": "/robo/v1/webhook",
+        "accountId": "492205185884",
+        "protocol": "HTTP/1.1",
+        "stage": "prod",
+        "domainPrefix": "api",
+        "requestTimeEpoch": 1733143785348,
+        "requestId": "dabda281-c7dd-4247-a6c5-1dc6b3671093",
+        "identity": {
+            "cognitoIdentityPoolId": null,
+            "accountId": null,
+            "cognitoIdentityId": null,
+            "caller": null,
+            "sourceIp": "45.238.246.15",
+            "principalOrgId": null,
+            "accessKey": null,
+            "cognitoAuthenticationType": null,
+            "cognitoAuthenticationProvider": null,
+            "userArn": null,
+            "userAgent": "PostmanRuntime/7.42.0",
+            "user": null
+        },
+        "domainName": "api.zapiador.com",
+        "deploymentId": "570peg",
+        "apiId": "rdpnxess33"
+    },
+    "body": "{\n    \"cliente_email\":\"kdeucher@gmail.com\",\n    \"assinatura_id\":\"2435161\",\n    \"produto_nome\":\"A Bíblia Comentada - Mensal\",\n    \"negocio_id\":\"BRTTI\"\n}",
+    "isBase64Encoded": false
+}

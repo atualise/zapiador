@@ -1,0 +1,269 @@
+org: atualise
+app: zapiador
+service: zapiador-api
+
+package: 
+  patterns:
+    - '!.vscode/**'
+    - '!vendors/**'
+    - '!events/**'
+    - '!.serverless/**'
+    - '!node_modules/**'
+    - '!data/**'
+    - '!examples/**'
+
+provider:
+  name: aws
+  runtime: nodejs18.x
+  stage: ${env:STAGE, 'prod'}
+  tags:
+    ServiceName: zapiador
+    StepName: whatsapp
+  stackTags:
+      ServiceName: zapiador
+      StepName: whatsapp
+  deploymentBucket:
+    tags:
+      ServiceName: zapiador
+      StepName: whatsapp
+  iam:
+    deploymentRole: ${env:AWS_DEPLOY_ROLE}
+    role:
+      statements:        
+        - Effect: "Allow"
+          Action:
+            - "lambda:GetLayerVersion"
+          Resource: ${env:AWS_LAMBDA_LAYER_DATABASE}
+        
+        - Effect: "Allow"
+          Action:
+            - "lambda:GetLayerVersion"
+          Resource: ${env:AWS_LAMBDA_LAYER_CONNECTION}
+        - Effect: "Allow"
+          Action:
+            - "sqs:ListQueues"
+            - "sqs:SendMessage"
+            - "sqs:ReceiveMessage"
+            - "sqs:setqueueattributes"
+          Resource: "arn:aws:sqs:${env:AWS_REGION}:${env:AWS_ACCOUNT_ID}:zapiador-api-${self:provider.stage}-responder"
+        - Effect: "Allow"
+          Action:
+            - "sqs:ListQueues"
+            - "sqs:SendMessage"
+            - "sqs:ReceiveMessage"
+            - "sqs:setqueueattributes"
+          Resource: "arn:aws:sqs:${env:AWS_REGION}:${env:AWS_ACCOUNT_ID}:zapiador-api-${self:provider.stage}-execucao_robo"
+  environment:
+    DB_HOST: ${env:DB_HOST}
+    DB_PORT: ${env:DB_PORT}
+    DB_USER: ${env:DB_USER}
+    DB_PASSWORD: ${env:DB_PASSWORD}
+    DB_DATABASE: ${env:DB_DATABASE}
+    WEBHOOK_VERIFY_TOKEN: ${env:WEBHOOK_VERIFY_TOKEN}
+    GRAPH_API_TOKEN: ${env:GRAPH_API_TOKEN}
+    AWS_REGION: ${env:AWS_REGION}
+constructs:
+  responder:
+    type: queue
+    worker:
+      handler: src/whatsapp.responderWorker
+      memorySize: 128
+      timeout: 60
+      tags:
+        StepName: whatsapp
+      layers:
+        - ${env:AWS_LAMBDA_LAYER_DATABASE}
+        - ${env:AWS_LAMBDA_LAYER_CONNECTION}
+    maxConcurrency: 10
+    extensions:
+      queue:
+        Properties:
+          MaximumMessageSize: 204800
+          Tags: 
+            - Key: ServiceName
+              Value: zapiador
+            - Key: StepName
+              Value: whatsapp
+  execucao_robo:
+    type: queue
+    worker:
+      handler: src/funil.execucao_robo
+      memorySize: 128
+      timeout: 60
+      tags:
+        StepName: robo
+      layers:
+        - ${env:AWS_LAMBDA_LAYER_DATABASE}
+        - ${env:AWS_LAMBDA_LAYER_CONNECTION}
+    maxConcurrency: 10
+    extensions:
+      queue:
+        Properties:
+          MaximumMessageSize: 204800
+          Tags: 
+            - Key: ServiceName
+              Value: zapiador
+            - Key: StepName
+              Value: robo
+
+          
+
+functions:
+  
+  contacts_list_all:
+    handler: src/contacts.contacts_list_all
+    memorySize: 128
+    timeout: 20
+    tags:
+      StepName: whatsapp
+    events:
+      - http:
+          method: get
+          path: /whatsapp/v1/contacts
+          cors: true
+    layers:
+      - ${env:AWS_LAMBDA_LAYER_DATABASE}
+      - ${env:AWS_LAMBDA_LAYER_CONNECTION}
+  contact_get_conversation:
+    handler: src/contacts.contact_get_conversation
+    memorySize: 128
+    timeout: 20
+    tags:
+      StepName: whatsapp
+    events:
+      - http:
+          method: get
+          path: /whatsapp/v1/contact/conversation
+          cors: true
+    layers:
+      - ${env:AWS_LAMBDA_LAYER_DATABASE}
+      - ${env:AWS_LAMBDA_LAYER_CONNECTION}  
+  clientes_list_all:
+    handler: src/clientes.clientes_list_all
+    memorySize: 128
+    timeout: 20
+    tags:
+      StepName: clientes
+    events:
+      - http:
+          method: get
+          path: /v1/clientes
+          cors: true
+    layers:
+      - ${env:AWS_LAMBDA_LAYER_DATABASE}
+      - ${env:AWS_LAMBDA_LAYER_CONNECTION} 
+  whatsapp_receive_message:
+    handler: src/whatsapp.receive_message
+    memorySize: 128
+    timeout: 20
+    tags:
+      StepName: whatsapp
+    events:
+      - http:
+          method: post
+          path: /whatsapp/v1/receive
+          cors: true
+    environment:
+      QUEUE_URL: ${construct:responder.queueUrl}
+    layers:
+      - ${env:AWS_LAMBDA_LAYER_DATABASE}
+      - ${env:AWS_LAMBDA_LAYER_CONNECTION}
+
+  whatsapp_send_message:
+    handler: src/whatsapp.send_message
+    memorySize: 128
+    timeout: 20
+    tags:
+      StepName: whatsapp
+    events:
+      - http:
+          method: post
+          path: /whatsapp/v1/send
+          cors: true
+    layers:
+      - ${env:AWS_LAMBDA_LAYER_DATABASE}
+      - ${env:AWS_LAMBDA_LAYER_CONNECTION}
+      
+  whatsapp_send_message_template:
+    handler: src/whatsapp.send_message_template
+    memorySize: 128
+    timeout: 20
+    tags:
+      StepName: whatsapp
+    events:
+      - http:
+          method: post
+          path: /whatsapp/v1/template/send
+          cors: true
+    layers:
+      - ${env:AWS_LAMBDA_LAYER_DATABASE}
+      - ${env:AWS_LAMBDA_LAYER_CONNECTION}
+
+  whatsapp_webhook_get:
+    handler: src/whatsapp.get_webhook
+    memorySize: 128
+    timeout: 20
+    tags:
+      StepName: whatsapp
+    events:
+      - http:
+          method: get
+          path: /whatsapp/v1/receive
+          cors: true
+    layers:
+      - ${env:AWS_LAMBDA_LAYER_DATABASE}
+      - ${env:AWS_LAMBDA_LAYER_CONNECTION}
+  robo_command:
+    handler: src/funil.robo_command
+    memorySize: 128
+    timeout: 20
+    tags:
+      StepName: robo
+    events:
+      - http:
+          method: post
+          path: /robo/v1/webhook
+          cors: true
+    environment:
+      QUEUE_URL: ${construct:execucao_robo.queueUrl}
+    layers:
+      - ${env:AWS_LAMBDA_LAYER_DATABASE}
+      - ${env:AWS_LAMBDA_LAYER_CONNECTION}
+
+#  execucao_robo_f:
+#    handler: src/funil.execucao_robo
+#    memorySize: 128
+#    timeout: 20
+#    tags:
+#      StepName: robo
+#    events:
+#      - http:
+#          method: post
+#          path: /robo/v1/execucao
+#          cors: true
+#    layers:
+#      - ${env:AWS_LAMBDA_LAYER_DATABASE}
+#      - ${env:AWS_LAMBDA_LAYER_CONNECTION}
+  
+
+plugins:
+  - serverless-lift
+  - serverless-offline
+  - serverless-domain-manager
+  - serverless-plugin-resource-tagging
+
+custom:
+  serverless-offline:
+    httpPort: 4000
+    useDocker: false
+    ignoreJWTSignature: true
+  customDomain:    
+    certificateArn: ${env:AWS_CERTIFICATE_ARN}
+    domainName: ${env:DOMAIN_NAME}
+    basePath: ''
+    stage: ${self:provider.stage}
+    createRoute53Record: true
+    createRoute53IPv6Record: true
+    endpointType: 'regional'
+    apiType: REST
+  

@@ -1,0 +1,21 @@
+{
+    "Records": [
+        {
+            "messageId": "40c1d5d7-7456-497f-8f2a-f2261568f8a0",
+            "receiptHandle": "AQEBmPFexw2LvnXYleZgdsG3YWVIMqrm3g3ipQegYa2O+Y1z89NzvgihzDtEc0WzgVzuZWF3udVnF+cSoG8sYUe1/ZNL6aHCG3qAL0GZGa1mcg2aaDD401dGU1SZiiPQCcFoLglgK0HJ2vxT/0VG+dEbEOcQUH5E6echtQUWUNvwwtm7zsNN+dHbbNq0m+UovKRtQv716dnoDZnXalB1ySslCZRqqp836x3uUf6R9HQxdjh6DwqYCsvODDljGu9ypCfoKCunkWl6Q2XXcX/Lbp3E88Ejz/wvn25nzS4MT3VtQtyJv2nPHKaXihd7ags+lCg8l+INZRXUn84Kweam3wHjuDr03mD18nJKcm588AqwJWSGmTk0ddMriQGO+GwzNjyKvpugPcH1XQtuUGJQJPUzaV15qjgHbOyI125odmV+zAg=",
+            "body": "{\"message_id\":\"wamid.HBgNNTUxMTk3NTcxNjYxNRUCABIYFDNBMDE0QzI4RDcwRTJGNkRGODc1AA==\",\"from_id\":\"5511975716615\",\"from_name\":\"Vagner Amaral\",\"from_phone\":\"5511975716615\",\"to_id\":\"441867515682175\",\"to_name\":\"Atualise Serviços Digitais\",\"to_phone\":\"5511989822151\",\"window_id\":\"\",\"text_message\":\"Por que Jesus morreu?\",\"document_message\":\"\",\"created_at\":\"2024-11-18 16:54:59\"}",
+            "attributes": {
+                "ApproximateReceiveCount": "1",
+                "AWSTraceHeader": "Root=1-673b7163-6e39a6ad646b9dc91b7b502d;Parent=67d8d5ff31d70716;Sampled=0;Lineage=1:deca32a6:0",
+                "SentTimestamp": "1731948899220",
+                "SenderId": "AROAXFGNXDNOPJENUH4KF:zapiador-whatsapp-prod-whatsapp_receive_message",
+                "ApproximateFirstReceiveTimestamp": "1731948899221"
+            },
+            "messageAttributes": {},
+            "md5OfBody": "397edbed9d5b06978e185cc713d86fe6",
+            "eventSource": "aws:sqs",
+            "eventSourceARN": "arn:aws:sqs:us-east-1:492205185884:zapiador-whatsapp-prod-responder",
+            "awsRegion": "us-east-1"
+        }
+    ]
+}

@@ -1,0 +1,140 @@
+{
+    "resource": "/v1/clientes",
+    "path": "/whatsapp/v1/clientes",
+    "httpMethod": "GET",
+    "headers": {
+        "accept": "application/json, text/plain, */*",
+        "accept-encoding": "gzip, deflate, br, zstd",
+        "accept-language": "pt-BR,pt;q=0.9,en-US;q=0.8,en;q=0.7,hi;q=0.6",
+        "cache-control": "no-cache",
+        "Host": "api.zapiador.com",
+        "origin": "http://localhost:3000",
+        "pragma": "no-cache",
+        "priority": "u=1, i",
+        "referer": "http://localhost:3000/",
+        "sec-ch-ua": "\"Chromium\";v=\"130\", \"Google Chrome\";v=\"130\", \"Not?A_Brand\";v=\"99\"",
+        "sec-ch-ua-mobile": "?0",
+        "sec-ch-ua-platform": "\"macOS\"",
+        "sec-fetch-dest": "empty",
+        "sec-fetch-mode": "cors",
+        "sec-fetch-site": "cross-site",
+        "User-Agent": "Mozilla/5.0 (Macintosh; Intel Mac OS X 10_15_7) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/130.0.0.0 Safari/537.36",
+        "X-Amzn-Trace-Id": "Root=1-67375c45-1577adb640736dc25ea4b038",
+        "X-Forwarded-For": "45.238.246.167",
+        "X-Forwarded-Port": "443",
+        "X-Forwarded-Proto": "https"
+    },
+    "multiValueHeaders": {
+        "accept": [
+            "application/json, text/plain, */*"
+        ],
+        "accept-encoding": [
+            "gzip, deflate, br, zstd"
+        ],
+        "accept-language": [
+            "pt-BR,pt;q=0.9,en-US;q=0.8,en;q=0.7,hi;q=0.6"
+        ],
+        "cache-control": [
+            "no-cache"
+        ],
+        "Host": [
+            "api.zapiador.com"
+        ],
+        "origin": [
+            "http://localhost:3000"
+        ],
+        "pragma": [
+            "no-cache"
+        ],
+        "priority": [
+            "u=1, i"
+        ],
+        "referer": [
+            "http://localhost:3000/"
+        ],
+        "sec-ch-ua": [
+            "\"Chromium\";v=\"130\", \"Google Chrome\";v=\"130\", \"Not?A_Brand\";v=\"99\""
+        ],
+        "sec-ch-ua-mobile": [
+            "?0"
+        ],
+        "sec-ch-ua-platform": [
+            "\"macOS\""
+        ],
+        "sec-fetch-dest": [
+            "empty"
+        ],
+        "sec-fetch-mode": [
+            "cors"
+        ],
+        "sec-fetch-site": [
+            "cross-site"
+        ],
+        "User-Agent": [
+            "Mozilla/5.0 (Macintosh; Intel Mac OS X 10_15_7) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/130.0.0.0 Safari/537.36"
+        ],
+        "X-Amzn-Trace-Id": [
+            "Root=1-67375c45-1577adb640736dc25ea4b038"
+        ],
+        "X-Forwarded-For": [
+            "45.238.246.167"
+        ],
+        "X-Forwarded-Port": [
+            "443"
+        ],
+        "X-Forwarded-Proto": [
+            "https"
+        ]
+    },
+    "queryStringParameters": {
+        "searchText": "",
+        "selectedFolder": "contacts",
+        "selectedLabel": ""
+    },
+    "multiValueQueryStringParameters": {
+        "searchText": [
+            ""
+        ],
+        "selectedFolder": [
+            "contacts"
+        ],
+        "selectedLabel": [
+            ""
+        ]
+    },
+    "pathParameters": null,
+    "stageVariables": null,
+    "requestContext": {
+        "resourceId": "wfkf3x",
+        "resourcePath": "/v1/clientes",
+        "httpMethod": "GET",
+        "extendedRequestId": "BSta7EVRIAMEprQ=",
+        "requestTime": "15/Nov/2024:14:35:49 +0000",
+        "path": "/whatsapp/v1/clientes",
+        "accountId": "492205185884",
+        "protocol": "HTTP/1.1",
+        "stage": "prod",
+        "domainPrefix": "api",
+        "requestTimeEpoch": 1731681349514,
+        "requestId": "d6efdfb1-f7af-43a1-b405-9de3ad22746b",
+        "identity": {
+            "cognitoIdentityPoolId": null,
+            "accountId": null,
+            "cognitoIdentityId": null,
+            "caller": null,
+            "sourceIp": "45.238.246.167",
+            "principalOrgId": null,
+            "accessKey": null,
+            "cognitoAuthenticationType": null,
+            "cognitoAuthenticationProvider": null,
+            "userArn": null,
+            "userAgent": "Mozilla/5.0 (Macintosh; Intel Mac OS X 10_15_7) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/130.0.0.0 Safari/537.36",
+            "user": null
+        },
+        "domainName": "api.zapiador.com",
+        "deploymentId": "32b3to",
+        "apiId": "kljgs5oqbe"
+    },
+    "body": null,
+    "isBase64Encoded": false
+}

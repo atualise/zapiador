@@ -1,0 +1,82 @@
+{
+    "resource": "/robo/v1/webhook",
+    "path": "/robo/v1/webhook",
+    "httpMethod": "POST",
+    "headers": {
+        "Accept": "application/json, text/plain, */*",
+        "Accept-Encoding": "gzip, compress, deflate, br",
+        "Content-Type": "application/json",
+        "Host": "api.zapiador.com",
+        "User-Agent": "axios/1.7.2",
+        "X-Amzn-Trace-Id": "Root=1-674cb741-0cd421e24a64f8fd44f353a9",
+        "X-Forwarded-For": "54.81.25.249",
+        "X-Forwarded-Port": "443",
+        "X-Forwarded-Proto": "https"
+    },
+    "multiValueHeaders": {
+        "Accept": [
+            "application/json, text/plain, */*"
+        ],
+        "Accept-Encoding": [
+            "gzip, compress, deflate, br"
+        ],
+        "Content-Type": [
+            "application/json"
+        ],
+        "Host": [
+            "api.zapiador.com"
+        ],
+        "User-Agent": [
+            "axios/1.7.2"
+        ],
+        "X-Amzn-Trace-Id": [
+            "Root=1-674cb741-0cd421e24a64f8fd44f353a9"
+        ],
+        "X-Forwarded-For": [
+            "54.81.25.249"
+        ],
+        "X-Forwarded-Port": [
+            "443"
+        ],
+        "X-Forwarded-Proto": [
+            "https"
+        ]
+    },
+    "queryStringParameters": null,
+    "multiValueQueryStringParameters": null,
+    "pathParameters": null,
+    "stageVariables": null,
+    "requestContext": {
+        "resourceId": "4imcb3",
+        "resourcePath": "/robo/v1/webhook",
+        "httpMethod": "POST",
+        "extendedRequestId": "CIGSVEseoAMEBSw=",
+        "requestTime": "01/Dec/2024:19:21:37 +0000",
+        "path": "/robo/v1/webhook",
+        "accountId": "492205185884",
+        "protocol": "HTTP/1.1",
+        "stage": "prod",
+        "domainPrefix": "api",
+        "requestTimeEpoch": 1733080897760,
+        "requestId": "e5770839-9034-416f-bb6d-72d6a2d0d631",
+        "identity": {
+            "cognitoIdentityPoolId": null,
+            "accountId": null,
+            "cognitoIdentityId": null,
+            "caller": null,
+            "sourceIp": "54.81.25.249",
+            "principalOrgId": null,
+            "accessKey": null,
+            "cognitoAuthenticationType": null,
+            "cognitoAuthenticationProvider": null,
+            "userArn": null,
+            "userAgent": "axios/1.7.2",
+            "user": null
+        },
+        "domainName": "api.zapiador.com",
+        "deploymentId": "wg5zke",
+        "apiId": "rdpnxess33"
+    },
+    "body": "{\"is_contract_active\":true,\"is_contract_pendente\":false,\"is_contract_overdue\":false,\"is_contract_churn\":false,\"negocio_id\":\"BRTTI\",\"client_id\":\"49178725453\",\"message_id\":null,\"contract_id\":\"3105193\",\"sender_id\":null,\"users_ids\":null,\"window_start\":null,\"products_ids\":[\"2435161\"],\"created_at\":\"2024-12-01 19:21:37\",\"contract_status\":\"RENOVADO\",\"client_telefone\":\"+5561983410160\",\"event_type\":\"EXECUTED_COMMAND\",\"robos_list\":[{\"id\":\"R456\",\"gatilho_execucao\":\"ABANDONED_CART\",\"tarefa_execucao\":\"ADD_FUNIL\",\"user_id\":\"\",\"funil_id\":\"F123\"}],\"funils_list\":[{\"id\":\"F123\",\"funil_nome\":\"Funil clientes renovação\"}],\"users_list\":[],\"funils_steps\":[{\"id\":\"1\",\"funil_id\":\"F123\",\"sequence\":0,\"type\":\"SEND_MESSAGE_TEMPLATE\",\"FORWARD_USER\":null,\"SEND_MESSAGE_TEMPLATE\":{\"id\":\"T123\",\"nome\":\"Boas-vindas\"},\"SEND_MESSAGE_FORM\":null,\"ADD_TAG\":null,\"WAIT_SCHEDULER\":null},{\"id\":\"2\",\"funil_id\":\"F123\",\"sequence\":1,\"type\":\"SEND_MESSAGE_FORM\",\"FORWARD_USER\":null,\"SEND_MESSAGE_TEMPLATE\":null,\"SEND_MESSAGE_FORM\":{\"id\":\"F123\",\"nome\":\"Dados básicos\"},\"ADD_TAG\":null,\"WAIT_SCHEDULER\":null},{\"id\":\"3\",\"funil_id\":\"F123\",\"sequence\":2,\"type\":\"FORWARD_USER\",\"FORWARD_USER\":{\"id\":\"U123\",\"nome\":\"Vagner Amaral\"},\"SEND_MESSAGE_TEMPLATE\":null,\"SEND_MESSAGE_FORM\":null,\"ADD_TAG\":null,\"WAIT_SCHEDULER\":null},{\"id\":\"4\",\"funil_id\":\"F123\",\"sequence\":3,\"type\":\"SEND_MESSAGE_TEMPLATE\",\"FORWARD_USER\":null,\"SEND_MESSAGE_TEMPLATE\":{\"id\":\"T456\",\"nome\":\"Encaminhamento\"},\"SEND_MESSAGE_FORM\":null,\"ADD_TAG\":null,\"WAIT_SCHEDULER\":null},{\"id\":\"5\",\"funil_id\":\"F123\",\"sequence\":4,\"type\":\"ADD_TAG\",\"FORWARD_USER\":null,\"SEND_MESSAGE_TEMPLATE\":null,\"SEND_MESSAGE_FORM\":null,\"ADD_TAG\":{\"id\":\"T123\",\"nome\":\"Atendimento prioritário\"},\"WAIT_SCHEDULER\":null},{\"id\":\"6\",\"funil_id\":\"F123\",\"sequence\":5,\"type\":\"WAIT_SCHEDULER\",\"FORWARD_USER\":null,\"SEND_MESSAGE_TEMPLATE\":null,\"SEND_MESSAGE_FORM\":null,\"ADD_TAG\":null,\"WAIT_SCHEDULER\":{\"id\":\"S123\",\"nome\":\"5 minutos\"}}],\"executed_at\":\"2024-12-01 19:21:37\",\"return_type\":\"ADDED_TAG\",\"next_step\":\"6\",\"current_step\":\"5\",\"current_step_value\":\"T123\",\"client_name\":\"Wilson Arajo de Lima\",\"client_email\":\"wilson.ojuara@yahoo.com.br\"}",
+    "isBase64Encoded": false
+}

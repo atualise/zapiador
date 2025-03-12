@@ -1,0 +1,20 @@
+{
+    "Records": [
+        {
+            "messageId": "ae90ac05-ff25-436b-89ff-1804556f1867",
+            "receiptHandle": "AQEBPBKW2ZRnUgf/OMkC8p2AChFJSL/a/92a9yk8QADi9h2zfNJ22hvGNR84NYuAYJndGVgleGpD45Cf2IRPnyDE2jI2dVfkOq47XLfoT+YqxoJGqN38n9ouiJzg9ot9kjX9BPGx/w5cAoNt9iiQtdZz1YbgvzXCCkNB/Q9y+HQ5FsFYAaPxKl3SYmycBGl3xJEa4Fa2ggWXl61YlUrLsfx9LQOJa3ZBVYuYQ1WL+h52P4t2GGKTYOVevzl6M4OLHATs32Vjw7MwDW0CzphZTB8fIElB8yK4jFRhEpW1WMjrgTjnwSSzUNv8Lftwxev+IHIF1/OVdkgYu/m/hyh3FJZD0Wbi3ZMCr55jbT/9q20YGHPhQANOOiAfepERiSfQatYg8obL1exjON8K3H82FP1safOWAEmayM13SPVh88Lk9zI=",
+            "body": "{\"is_contract_related\":false,\"is_contract_active\":false,\"is_contract_pendente\":false,\"is_contract_overdue\":false,\"is_products_related\":false,\"is_users_related\":false,\"is_activated_by_message\":true,\"is_activated_by_event\":false,\"negocio_id\":null,\"client_id\":null,\"message_id\":\"wamid.HBgNNTUxMTk3NTcxNjYxNRUCABEYEkE5NUYzRTNERDYzRjMzMTRDMAA=\",\"contract_id\":null,\"sender_id\":\"+5511975716615\",\"users_ids\":null,\"window_start\":null,\"products_ids\":null,\"created_at\":null,\"contract_status\":null}",
+            "attributes": {
+                "ApproximateReceiveCount": "1",
+                "SentTimestamp": "1732623869714",
+                "SenderId": "AROAXFGNXDNOO6IB35O6K:serverless-framework-t24j0s",
+                "ApproximateFirstReceiveTimestamp": "1732623869723"
+            },
+            "messageAttributes": {},
+            "md5OfBody": "8f45fe7ce61bec39a59c3b3571c759cf",
+            "eventSource": "aws:sqs",
+            "eventSourceARN": "arn:aws:sqs:us-east-1:492205185884:zapiador-api-prod-execucao_robo",
+            "awsRegion": "us-east-1"
+        }
+    ]
+}
